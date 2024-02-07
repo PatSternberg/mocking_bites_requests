@@ -1,5 +1,7 @@
 import time
 import requests
+import json
+
 
 class TimeError:
     def __init__(self, requester = requests):
@@ -16,4 +18,4 @@ class TimeError:
     def _get_server_time(self):
         response = self.requester.get("https://worldtimeapi.org/api/ip")
         json = response.json()
-        return json["unixtime"]
+        print(json['unixtime'])
